@@ -222,17 +222,17 @@
                     <div class="info">
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">开始时间</button>
-                            <span>2025-12-05 14:33:43</span>
+                            <span>2025-12-05 14:37:42</span>
                         </div>
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">用例总数</button>
-                            <span>2</span>
+                            <span>1</span>
                         </div>
                     </div>
                     <div class="info">
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">运行时长</button>
-                            <span>54.289666 S</span>
+                            <span>31.850534 S</span>
                         </div>
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm ">测试人员</button>
@@ -270,6 +270,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                        
+                        <tr>
+                            <th scope="row">2025-12-05 14:37:42</th>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0.00%</td>
+                        </tr>
                         
                         <tr>
                             <th scope="row">2025-12-05 14:33:43</th>
@@ -406,228 +413,8 @@
                     <td>1</td>
                     <td class="srctestcasetest_smokepy">src\testcase\test_smoke.py</td>
                     <td>TestStart.test_smoke</td>
-                    <td>smoke-test_copy_monitoring_C_copying.txt</td>
-                    <td>20.535591</td>
-                    
-                    <td class="text-warning">失败</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
-                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
-                            <div class="card-body">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
-                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
-                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
-                                    </li>
-                                    
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="contact"
-                                           aria-selected="false" style="padding: 0 16px">异常信息</a>
-                                    </li>
-                                    
-                                    
-
-                                </ul>
-                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
-
-                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
-                                        <pre style="line-height: 18px">ERROR    src.common.log_setting:execute.py:92 test_copy_monitoring_C_copying.txt line 0 Message: 元素等待超时: xpath=/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[2]/form/div/div[1]/div/div/div/input, 条件: clickable
-
-ERROR    src.common.log_setting:execute.py:97 <a href="error_screenshot\test_copy_monitoring_C_copying_error.png"><image src="error_screenshot\test_copy_monitoring_C_copying_error.png" width="200px"> </a></pre>
-                                    </div>
-                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
-                                        <pre style="line-height: 18px"></pre>
-                                    </div>
-                                    
-                                    <div class="tab-pane fade " role="tabpanel" aria-labelledby="home-tab">
-                                        <pre style="line-height: 18px">self = <src.base.basepage.Action object at 0x000001D912B0ABC0>
-locator = ('xpath', '/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[2]/form/div/div[1]/div/div/div/input')
-condition_type = 'clickable', kwargs = {}
-condition_map = {'clickable': <function element_to_be_clickable at 0x000001D902254160>, 'present': <function presence_of_element_locat...ement_to_be_selected at 0x000001D902254280>, 'visible': <function visibility_of_element_located at 0x000001D902243A30>}
-
-    def _wait_for_condition(self, locator, condition_type, **kwargs):
-        """内部方法：处理不同的等待条件"""
-        condition_map = {
-            'clickable': EC.element_to_be_clickable,
-            'visible': EC.visibility_of_element_located,
-            'present': EC.presence_of_element_located,
-            'selected': EC.element_to_be_selected,
-        }
-    
-        if condition_type not in condition_map:
-            raise ValueError(f"不支持的等待条件: {condition_type}")
-    
-        try:
->           return self.wait.until(condition_map[condition_type](locator))
-
-src\base\basepage.py:65: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <selenium.webdriver.support.wait.WebDriverWait (session="b6bf30fe1587af2d6770a1cf34e4bd5b")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x000001D913B01630>
-message = ''
-
-    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
-        """Wait until the method returns a value that is not False.
-    
-        Calls the method provided with the driver as an argument until the
-        return value does not evaluate to ``False``.
-    
-        Parameters:
-        -----------
-        method: callable(WebDriver)
-            - A callable object that takes a WebDriver instance as an argument.
-    
-        message: str
-            - Optional message for :exc:`TimeoutException`
-    
-        Return:
-        -------
-        object: T
-            - The result of the last call to `method`
-    
-        Raises:
-        -------
-        TimeoutException
-            - If 'method' does not return a truthy value within the WebDriverWait
-            object's timeout
-    
-        Example:
-        --------
-        >>> from selenium.webdriver.common.by import By
-        >>> from selenium.webdriver.support.ui import WebDriverWait
-        >>> from selenium.webdriver.support import expected_conditions as EC
-    
-        # Wait until an element is visible on the page
-        >>> wait = WebDriverWait(driver, 10)
-        >>> element = wait.until(EC.visibility_of_element_located((By.ID, "exampleId")))
-        >>> print(element.text)
-        """
-        screen = None
-        stacktrace = None
-    
-        end_time = time.monotonic() + self._timeout
-        while True:
-            try:
-                value = method(self._driver)
-                if value:
-                    return value
-            except self._ignored_exceptions as exc:
-                screen = getattr(exc, "screen", None)
-                stacktrace = getattr(exc, "stacktrace", None)
-            if time.monotonic() > end_time:
-                break
-            time.sleep(self._poll)
->       raise TimeoutException(message, screen, stacktrace)
-E       selenium.common.exceptions.TimeoutException: Message: 
-E       Stacktrace:
-E       Symbols not available. Dumping unresolved backtrace:
-E       	0x7ff69b77a235
-E       	0x7ff69b4d2650
-E       	0x7ff69b2616dd
-E       	0x7ff69b2ba27e
-E       	0x7ff69b2ba58c
-E       	0x7ff69b30ed77
-E       	0x7ff69b30baba
-E       	0x7ff69b2ab0ed
-E       	0x7ff69b2abf63
-E       	0x7ff69b7a5d60
-E       	0x7ff69b79fe8a
-E       	0x7ff69b7c1005
-E       	0x7ff69b4ed73e
-E       	0x7ff69b4f4e3f
-E       	0x7ff69b4db7e4
-E       	0x7ff69b4db99f
-E       	0x7ff69b4c1908
-E       	0x7ffe6c6a259d
-E       	0x7ffe6df4af78
-
-D:\python\lib\site-packages\selenium\webdriver\support\wait.py:138: TimeoutException
-
-During handling of the above exception, another exception occurred:
-
-self = <src.testcase.test_smoke.TestStart object at 0x000001D912B09EA0>
-folder_name = 'smoke', file_name = 'test_copy_monitoring_C_copying.txt'
-user_driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="b6bf30fe1587af2d6770a1cf34e4bd5b")>
-
-    @pytest.mark.parametrize('folder_name, file_name', get_test_case_parametrize(EnvParas.script_folder))
-    def test_smoke(self, folder_name: str, file_name: str, user_driver):
-        # 开始执行
-        root_dir = EnvParas.script_folder
-        testcase_url_path = root_dir + "\\" + "case_url.json"
-        key = file_name.split('.')[0]
-        url = read_json_file(testcase_url_path)[key]
-        url = EnvParas.base_url + url
-        print(url)
-        user_driver.get(url)
-        user_driver.implicitly_wait(20)
-        executor = Execute(user_driver)
-        executor.file_name = file_name.split(".")[0]
->       executor.execute_interface(root_dir, folder_name, file_name)
-
-src\testcase\test_smoke.py:25: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-src\testcase\execute.py:82: in execute_interface
-    self.execute_by_line(line_list[i])
-src\testcase\execute.py:61: in execute_by_line
-    op_method.__call__(*paras)
-src\base\basepage.py:73: in input
-    el=self.get_locator(ctrl_type, identify_key, identify_value,'clickable')
-src\base\basepage.py:47: in get_locator
-    element = self._wait_for_condition(locator, wait_condition, **wait_kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <src.base.basepage.Action object at 0x000001D912B0ABC0>
-locator = ('xpath', '/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[2]/form/div/div[1]/div/div/div/input')
-condition_type = 'clickable', kwargs = {}
-condition_map = {'clickable': <function element_to_be_clickable at 0x000001D902254160>, 'present': <function presence_of_element_locat...ement_to_be_selected at 0x000001D902254280>, 'visible': <function visibility_of_element_located at 0x000001D902243A30>}
-
-    def _wait_for_condition(self, locator, condition_type, **kwargs):
-        """内部方法：处理不同的等待条件"""
-        condition_map = {
-            'clickable': EC.element_to_be_clickable,
-            'visible': EC.visibility_of_element_located,
-            'present': EC.presence_of_element_located,
-            'selected': EC.element_to_be_selected,
-        }
-    
-        if condition_type not in condition_map:
-            raise ValueError(f"不支持的等待条件: {condition_type}")
-    
-        try:
-            return self.wait.until(condition_map[condition_type](locator))
-        except TimeoutException:
->           raise TimeoutException(f"元素等待超时: {locator[0]}={locator[1]}, 条件: {condition_type}")
-E           selenium.common.exceptions.TimeoutException: Message: 元素等待超时: xpath=/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[2]/form/div/div[1]/div/div/div/input, 条件: clickable
-
-src\base\basepage.py:67: TimeoutException</pre>
-                                    </div>
-                                    
-                                    
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                
-                <tr class="case_">
-                    <td>2</td>
-                    <td class="srctestcasetest_smokepy">src\testcase\test_smoke.py</td>
-                    <td>TestStart.test_smoke</td>
                     <td>smoke-test_import_data_cancel.txt</td>
-                    <td>20.319541</td>
+                    <td>20.497913</td>
                     
                     <td class="text-warning">失败</td>
                     
@@ -670,10 +457,10 @@ ERROR    src.common.log_setting:execute.py:97 <a href="error_screenshot\test_imp
                                     </div>
                                     
                                     <div class="tab-pane fade " role="tabpanel" aria-labelledby="home-tab">
-                                        <pre style="line-height: 18px">self = <src.base.basepage.Action object at 0x000001D9030B56F0>
+                                        <pre style="line-height: 18px">self = <src.base.basepage.Action object at 0x0000023FE3A27130>
 locator = ('xpath', '/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[1]/div[2]/button[3]/span')
 condition_type = 'clickable', kwargs = {}
-condition_map = {'clickable': <function element_to_be_clickable at 0x000001D902254160>, 'present': <function presence_of_element_locat...ement_to_be_selected at 0x000001D902254280>, 'visible': <function visibility_of_element_located at 0x000001D902243A30>}
+condition_map = {'clickable': <function element_to_be_clickable at 0x0000023FD30F4280>, 'present': <function presence_of_element_locat...ement_to_be_selected at 0x0000023FD30F43A0>, 'visible': <function visibility_of_element_located at 0x0000023FD30E3B50>}
 
     def _wait_for_condition(self, locator, condition_type, **kwargs):
         """内部方法：处理不同的等待条件"""
@@ -693,8 +480,8 @@ condition_map = {'clickable': <function element_to_be_clickable at 0x000001D9022
 src\base\basepage.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="b6bf30fe1587af2d6770a1cf34e4bd5b")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x000001D913B83C70>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="454cbcaf32d6c55a94a63638bd093caa")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x0000023FE4A21510>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -776,9 +563,9 @@ D:\python\lib\site-packages\selenium\webdriver\support\wait.py:138: TimeoutExcep
 
 During handling of the above exception, another exception occurred:
 
-self = <src.testcase.test_smoke.TestStart object at 0x000001D912B09ED0>
+self = <src.testcase.test_smoke.TestStart object at 0x0000023FE3A25F60>
 folder_name = 'smoke', file_name = 'test_import_data_cancel.txt'
-user_driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="b6bf30fe1587af2d6770a1cf34e4bd5b")>
+user_driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="454cbcaf32d6c55a94a63638bd093caa")>
 
     @pytest.mark.parametrize('folder_name, file_name', get_test_case_parametrize(EnvParas.script_folder))
     def test_smoke(self, folder_name: str, file_name: str, user_driver):
@@ -807,10 +594,10 @@ src\base\basepage.py:47: in get_locator
     element = self._wait_for_condition(locator, wait_condition, **wait_kwargs)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-self = <src.base.basepage.Action object at 0x000001D9030B56F0>
+self = <src.base.basepage.Action object at 0x0000023FE3A27130>
 locator = ('xpath', '/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[1]/div[2]/button[3]/span')
 condition_type = 'clickable', kwargs = {}
-condition_map = {'clickable': <function element_to_be_clickable at 0x000001D902254160>, 'present': <function presence_of_element_locat...ement_to_be_selected at 0x000001D902254280>, 'visible': <function visibility_of_element_located at 0x000001D902243A30>}
+condition_map = {'clickable': <function element_to_be_clickable at 0x0000023FD30F4280>, 'present': <function presence_of_element_locat...ement_to_be_selected at 0x0000023FD30F43A0>, 'visible': <function visibility_of_element_located at 0x0000023FD30E3B50>}
 
     def _wait_for_condition(self, locator, condition_type, **kwargs):
         """内部方法：处理不同的等待条件"""
@@ -857,16 +644,16 @@ src\base\basepage.py:67: TimeoutException</pre>
 
     const resulte = {
             "success": `0`,
-            "all": `2`,
-            "fail": `2`,
+            "all": `1`,
+            "fail": `1`,
             "skip": '0',
             "error": `0`,
-            "runtime": '54.289666 S',
-            "begin_time": "1764916423.752159",
+            "runtime": '31.850534 S',
+            "begin_time": "1764916662.957424",
             "pass_rate": '0.00',
         }
     ;
-    const history = [{'success': 3, 'all': 3, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '6.657074 S'}, {'success': 5, 'all': 8, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '239.128074 S', 'begin_time': '2025-10-31 18:54:44', 'pass_rate': '62.50'}, {'success': 3, 'all': 4, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '104.495413 S', 'begin_time': '2025-11-03 10:38:07', 'pass_rate': '75.00'}, {'success': 8, 'all': 9, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '227.966336 S', 'begin_time': '2025-11-03 11:21:26', 'pass_rate': '88.89'}, {'success': 14, 'all': 17, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '404.400940 S', 'begin_time': '2025-11-26 15:14:09', 'pass_rate': '82.35'}, {'success': 15, 'all': 16, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '360.749410 S', 'begin_time': '2025-11-26 15:48:49', 'pass_rate': '93.75'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '339.557064 S', 'begin_time': '2025-11-26 16:03:16', 'pass_rate': '100.00'}, {'success': 13, 'all': 16, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '371.908839 S', 'begin_time': '2025-11-26 16:18:18', 'pass_rate': '81.25'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '340.221317 S', 'begin_time': '2025-11-26 16:36:10', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '345.237770 S', 'begin_time': '2025-11-26 17:49:06', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '346.406378 S', 'begin_time': '2025-11-27 11:05:24', 'pass_rate': '100.00'}, {'success': 0, 'all': 2, 'fail': 2, 'skip': 0, 'error': 0, 'runtime': '54.289666 S', 'begin_time': '2025-12-05 14:33:43', 'pass_rate': '0.00'}];
+    const history = [{'success': 3, 'all': 3, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '6.657074 S'}, {'success': 5, 'all': 8, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '239.128074 S', 'begin_time': '2025-10-31 18:54:44', 'pass_rate': '62.50'}, {'success': 3, 'all': 4, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '104.495413 S', 'begin_time': '2025-11-03 10:38:07', 'pass_rate': '75.00'}, {'success': 8, 'all': 9, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '227.966336 S', 'begin_time': '2025-11-03 11:21:26', 'pass_rate': '88.89'}, {'success': 14, 'all': 17, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '404.400940 S', 'begin_time': '2025-11-26 15:14:09', 'pass_rate': '82.35'}, {'success': 15, 'all': 16, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '360.749410 S', 'begin_time': '2025-11-26 15:48:49', 'pass_rate': '93.75'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '339.557064 S', 'begin_time': '2025-11-26 16:03:16', 'pass_rate': '100.00'}, {'success': 13, 'all': 16, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '371.908839 S', 'begin_time': '2025-11-26 16:18:18', 'pass_rate': '81.25'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '340.221317 S', 'begin_time': '2025-11-26 16:36:10', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '345.237770 S', 'begin_time': '2025-11-26 17:49:06', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '346.406378 S', 'begin_time': '2025-11-27 11:05:24', 'pass_rate': '100.00'}, {'success': 0, 'all': 2, 'fail': 2, 'skip': 0, 'error': 0, 'runtime': '54.289666 S', 'begin_time': '2025-12-05 14:33:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '31.850534 S', 'begin_time': '2025-12-05 14:37:42', 'pass_rate': '0.00'}];
 
     var passRate = [];
     var dTime = [];
