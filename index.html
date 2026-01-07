@@ -222,7 +222,7 @@
                     <div class="info">
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">开始时间</button>
-                            <span>2026-01-07 18:25:00</span>
+                            <span>2026-01-07 18:28:39</span>
                         </div>
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">用例总数</button>
@@ -232,7 +232,7 @@
                     <div class="info">
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">运行时长</button>
-                            <span>25.400972 S</span>
+                            <span>28.392981 S</span>
                         </div>
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm ">测试人员</button>
@@ -242,11 +242,11 @@
                     <div class="info">
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm">成功用例</button>
-                            <span>0</span>
+                            <span>1</span>
                         </div>
                         <div style="flex:5">
                             <button type="button" class="btn btn-primary btn-sm ">通过率</button>
-                            <span>0.00%</span>
+                            <span>100.00%</span>
                         </div>
                     </div>
                 </div>
@@ -270,6 +270,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                        
+                        <tr>
+                            <th scope="row">2026-01-07 18:28:39</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>100.00%</td>
+                        </tr>
                         
                         <tr>
                             <th scope="row">2026-01-07 18:25:00</th>
@@ -484,9 +491,11 @@
                     <td class="srctestcasetest_smokepy">src\testcase\test_smoke.py</td>
                     <td>TestStart.test_smoke</td>
                     <td>smoke2-test_channel_A_add_channel.txt</td>
-                    <td>13.742804</td>
+                    <td>16.988410</td>
                     
-                    <td class="text-warning">失败</td>
+                    
+                    <td class="text-success">通过</td>
+                    
                     
                     <td>
                         <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
@@ -507,11 +516,6 @@
                                            aria-selected="false" style="padding: 0 16px">调试输出</a>
                                     </li>
                                     
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="contact"
-                                           aria-selected="false" style="padding: 0 16px">异常信息</a>
-                                    </li>
-                                    
                                     
 
                                 </ul>
@@ -520,169 +524,17 @@
                                     <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
                                         <pre style="line-height: 18px">INFO     src.common.log_setting:execute.py:90 <a href="error_screenshot\test_channel_A_add_channel_normal.png"><image src="error_screenshot\test_channel_A_add_channel_normal.png" width="200px"> </a>
 INFO     src.common.log_setting:case_assert.py:49 断言需要的方法和参数如下：
-INFO     src.common.log_setting:case_assert.py:50 ['object_assert', ['find_elements', 'XPATH', '/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[3]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/div/table/tbody/tr', '["autotest测试","自动化测试","李测试2","服务点","自投"]']]</pre>
+INFO     src.common.log_setting:case_assert.py:50 ['object_assert', ['find_elements', 'XPATH', '/html/body/div[1]/div/div[3]/div[2]/div/div[1]/div[3]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/div/table/tbody/tr', '["autotest测试","自动化测试","李测试2","服务点","自投"]']]
+INFO     src.common.log_setting:case_assert.py:91 页面列表数据:['autotest测试\n自动化测试\n服务点\n自投\n0.0%\n李测试2']
+INFO     src.common.log_setting:case_assert.py:97 断言数据:autotest测试
+INFO     src.common.log_setting:case_assert.py:97 断言数据:自动化测试
+INFO     src.common.log_setting:case_assert.py:97 断言数据:李测试2
+INFO     src.common.log_setting:case_assert.py:97 断言数据:服务点
+INFO     src.common.log_setting:case_assert.py:97 断言数据:自投
+INFO     src.common.log_setting:case_assert.py:112 断言结果列表:[True, True, True, True, True]</pre>
                                     </div>
                                     <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
                                         <pre style="line-height: 18px"></pre>
-                                    </div>
-                                    
-                                    <div class="tab-pane fade " role="tabpanel" aria-labelledby="home-tab">
-                                        <pre style="line-height: 18px">self = <src.testcase.test_smoke.TestStart object at 0x0000025909959C30>
-folder_name = 'smoke2', file_name = 'test_channel_A_add_channel.txt'
-user_driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="9c404b7f10a3f91a950ca40b67ff25ac")>
-
-    @pytest.mark.parametrize('folder_name, file_name', get_test_case_parametrize(EnvParas.script_folder))
-    def test_smoke(self, folder_name: str, file_name: str, user_driver):
-        # 开始执行
-        root_dir = EnvParas.script_folder
-        testcase_url_path = root_dir + "\\" + "case_url.json"
-        key = file_name.split('.')[0]
-        url = read_json_file(testcase_url_path)[key]
-        url = EnvParas.base_url + url
-        print(url)
-        user_driver.get(url)
-        user_driver.implicitly_wait(20)
-        executor = Execute(user_driver)
-        executor.file_name = file_name.split(".")[0]
-        executor.execute_interface(root_dir, folder_name, file_name)
-        test_assert = CaseAssert(user_driver, folder_name, file_name)
-        kwargs_value = test_assert.get_kwargs()
-        if kwargs_value and len(kwargs_value) % 2 == 0:
-            for i in range(0, len(kwargs_value), 2):
-                if kwargs_value[i] in test_assert.interface_keys.keys():
->                   assert_result = test_assert.interface_keys[kwargs_value[i]](kwargs_value[i + 1])  # 找到匹配关键字则开始执行函数
-
-src\testcase\test_smoke.py:31: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-src\base\case_assert.py:90: in compare_object
-    el_list.append(el[i].text)
-D:\python\lib\site-packages\selenium\webdriver\remote\webelement.py:110: in text
-    return self._execute(Command.GET_ELEMENT_TEXT)["value"]
-D:\python\lib\site-packages\selenium\webdriver\remote\webelement.py:573: in _execute
-    return self._parent.execute(command, params)
-D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:454: in execute
-    self.error_handler.check_response(response)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000025909959C60>
-response = {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale elemen...ff7a2bfed8c\\n\\t0x7ff7a2be2004\\n\\t0x7ff7a2be21b5\\n\\t0x7ff7a2bc7ee2\\n\\t0x7ffd5f44259d\\n\\t0x7ffd6068af78\\n"}}'}
-
-    def check_response(self, response: dict[str, Any]) -> None:
-        """Checks that a JSON response from the WebDriver does not have an
-        error.
-    
-        :Args:
-         - response - The JSON response from the WebDriver server as a dictionary
-           object.
-    
-        :Raises: If the response contains an error message.
-        """
-        status = response.get("status", None)
-        if not status or status == ErrorCode.SUCCESS:
-            return
-        value = None
-        message = response.get("message", "")
-        screen: str = response.get("screen", "")
-        stacktrace = None
-        if isinstance(status, int):
-            value_json = response.get("value", None)
-            if value_json and isinstance(value_json, str):
-                try:
-                    value = json.loads(value_json)
-                    if isinstance(value, dict):
-                        if len(value) == 1:
-                            value = value["value"]
-                        status = value.get("error", None)
-                        if not status:
-                            status = value.get("status", ErrorCode.UNKNOWN_ERROR)
-                            message = value.get("value") or value.get("message")
-                            if not isinstance(message, str):
-                                value = message
-                                message = message.get("message")
-                        else:
-                            message = value.get("message", None)
-                except ValueError:
-                    pass
-    
-        exception_class: type[WebDriverException]
-        e = ErrorCode()
-        error_codes = [item for item in dir(e) if not item.startswith("__")]
-        for error_code in error_codes:
-            error_info = getattr(ErrorCode, error_code)
-            if isinstance(error_info, list) and status in error_info:
-                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)
-                break
-        else:
-            exception_class = WebDriverException
-    
-        if not value:
-            value = response["value"]
-        if isinstance(value, str):
-            raise exception_class(value)
-        if message == "" and "message" in value:
-            message = value["message"]
-    
-        screen = None  # type: ignore[assignment]
-        if "screen" in value:
-            screen = value["screen"]
-    
-        stacktrace = None
-        st_value = value.get("stackTrace") or value.get("stacktrace")
-        if st_value:
-            if isinstance(st_value, str):
-                stacktrace = st_value.split("\n")
-            else:
-                stacktrace = []
-                try:
-                    for frame in st_value:
-                        line = frame.get("lineNumber", "")
-                        file = frame.get("fileName", "<anonymous>")
-                        if line:
-                            file = f"{file}:{line}"
-                        meth = frame.get("methodName", "<anonymous>")
-                        if "className" in frame:
-                            meth = f"{frame['className']}.{meth}"
-                        msg = "    at %s (%s)"
-                        msg = msg % (meth, file)
-                        stacktrace.append(msg)
-                except TypeError:
-                    pass
-        if exception_class == UnexpectedAlertPresentException:
-            alert_text = None
-            if "data" in value:
-                alert_text = value["data"].get("text")
-            elif "alert" in value:
-                alert_text = value["alert"].get("text")
-            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
->       raise exception_class(message, screen, stacktrace)
-E       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
-E         (Session info: chrome=143.0.7499.170); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
-E       Stacktrace:
-E       Symbols not available. Dumping unresolved backtrace:
-E       	0x7ff7a2bd88e5
-E       	0x7ff7a2bd8940
-E       	0x7ff7a29b165d
-E       	0x7ff7a29b92cc
-E       	0x7ff7a29bc3b4
-E       	0x7ff7a29bc47f
-E       	0x7ff7a2a0390c
-E       	0x7ff7a2a31fda
-E       	0x7ff7a29fc746
-E       	0x7ff7a2a5ac97
-E       	0x7ff7a29fac29
-E       	0x7ff7a29fba93
-E       	0x7ff7a2ef0640
-E       	0x7ff7a2eeaf80
-E       	0x7ff7a2f096e6
-E       	0x7ff7a2bf5de4
-E       	0x7ff7a2bfed8c
-E       	0x7ff7a2be2004
-E       	0x7ff7a2be21b5
-E       	0x7ff7a2bc7ee2
-E       	0x7ffd5f44259d
-E       	0x7ffd6068af78
-
-D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py:232: StaleElementReferenceException</pre>
                                     </div>
                                     
                                     
@@ -708,17 +560,17 @@ D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py:232: Stale
 <script type="text/javascript">
 
     const resulte = {
-            "success": `0`,
+            "success": `1`,
             "all": `1`,
-            "fail": `1`,
+            "fail": `0`,
             "skip": '0',
             "error": `0`,
-            "runtime": '25.400972 S',
-            "begin_time": "1767781500.685839",
-            "pass_rate": '0.00',
+            "runtime": '28.392981 S',
+            "begin_time": "1767781719.870391",
+            "pass_rate": '100.00',
         }
     ;
-    const history = [{'success': 3, 'all': 3, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '6.657074 S'}, {'success': 5, 'all': 8, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '239.128074 S', 'begin_time': '2025-10-31 18:54:44', 'pass_rate': '62.50'}, {'success': 3, 'all': 4, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '104.495413 S', 'begin_time': '2025-11-03 10:38:07', 'pass_rate': '75.00'}, {'success': 8, 'all': 9, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '227.966336 S', 'begin_time': '2025-11-03 11:21:26', 'pass_rate': '88.89'}, {'success': 14, 'all': 17, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '404.400940 S', 'begin_time': '2025-11-26 15:14:09', 'pass_rate': '82.35'}, {'success': 15, 'all': 16, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '360.749410 S', 'begin_time': '2025-11-26 15:48:49', 'pass_rate': '93.75'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '339.557064 S', 'begin_time': '2025-11-26 16:03:16', 'pass_rate': '100.00'}, {'success': 13, 'all': 16, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '371.908839 S', 'begin_time': '2025-11-26 16:18:18', 'pass_rate': '81.25'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '340.221317 S', 'begin_time': '2025-11-26 16:36:10', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '345.237770 S', 'begin_time': '2025-11-26 17:49:06', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '346.406378 S', 'begin_time': '2025-11-27 11:05:24', 'pass_rate': '100.00'}, {'success': 0, 'all': 2, 'fail': 2, 'skip': 0, 'error': 0, 'runtime': '54.289666 S', 'begin_time': '2025-12-05 14:33:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '31.850534 S', 'begin_time': '2025-12-05 14:37:42', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '35.190680 S', 'begin_time': '2025-12-05 14:41:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '34.865309 S', 'begin_time': '2025-12-05 14:42:27', 'pass_rate': '0.00'}, {'success': 0, 'all': 16, 'fail': 16, 'skip': 0, 'error': 0, 'runtime': '338.058059 S', 'begin_time': '2025-12-05 14:54:13', 'pass_rate': '0.00'}, {'success': 0, 'all': 2, 'fail': 2, 'skip': 0, 'error': 0, 'runtime': '54.042980 S', 'begin_time': '2025-12-05 15:13:55', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '32.517141 S', 'begin_time': '2025-12-05 15:51:06', 'pass_rate': '0.00'}, {'success': 15, 'all': 18, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '388.594549 S', 'begin_time': '2025-12-23 14:08:47', 'pass_rate': '83.33'}, {'success': 0, 'all': 18, 'fail': 0, 'skip': 0, 'error': 18, 'runtime': '23.890495 S', 'begin_time': '2026-01-07 18:06:34', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '32.313465 S', 'begin_time': '2026-01-07 18:16:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '15.658807 S', 'begin_time': '2026-01-07 18:20:54', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '25.400972 S', 'begin_time': '2026-01-07 18:25:00', 'pass_rate': '0.00'}];
+    const history = [{'success': 3, 'all': 3, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '6.657074 S'}, {'success': 5, 'all': 8, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '239.128074 S', 'begin_time': '2025-10-31 18:54:44', 'pass_rate': '62.50'}, {'success': 3, 'all': 4, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '104.495413 S', 'begin_time': '2025-11-03 10:38:07', 'pass_rate': '75.00'}, {'success': 8, 'all': 9, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '227.966336 S', 'begin_time': '2025-11-03 11:21:26', 'pass_rate': '88.89'}, {'success': 14, 'all': 17, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '404.400940 S', 'begin_time': '2025-11-26 15:14:09', 'pass_rate': '82.35'}, {'success': 15, 'all': 16, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '360.749410 S', 'begin_time': '2025-11-26 15:48:49', 'pass_rate': '93.75'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '339.557064 S', 'begin_time': '2025-11-26 16:03:16', 'pass_rate': '100.00'}, {'success': 13, 'all': 16, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '371.908839 S', 'begin_time': '2025-11-26 16:18:18', 'pass_rate': '81.25'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '340.221317 S', 'begin_time': '2025-11-26 16:36:10', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '345.237770 S', 'begin_time': '2025-11-26 17:49:06', 'pass_rate': '100.00'}, {'success': 16, 'all': 16, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '346.406378 S', 'begin_time': '2025-11-27 11:05:24', 'pass_rate': '100.00'}, {'success': 0, 'all': 2, 'fail': 2, 'skip': 0, 'error': 0, 'runtime': '54.289666 S', 'begin_time': '2025-12-05 14:33:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '31.850534 S', 'begin_time': '2025-12-05 14:37:42', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '35.190680 S', 'begin_time': '2025-12-05 14:41:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '34.865309 S', 'begin_time': '2025-12-05 14:42:27', 'pass_rate': '0.00'}, {'success': 0, 'all': 16, 'fail': 16, 'skip': 0, 'error': 0, 'runtime': '338.058059 S', 'begin_time': '2025-12-05 14:54:13', 'pass_rate': '0.00'}, {'success': 0, 'all': 2, 'fail': 2, 'skip': 0, 'error': 0, 'runtime': '54.042980 S', 'begin_time': '2025-12-05 15:13:55', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '32.517141 S', 'begin_time': '2025-12-05 15:51:06', 'pass_rate': '0.00'}, {'success': 15, 'all': 18, 'fail': 3, 'skip': 0, 'error': 0, 'runtime': '388.594549 S', 'begin_time': '2025-12-23 14:08:47', 'pass_rate': '83.33'}, {'success': 0, 'all': 18, 'fail': 0, 'skip': 0, 'error': 18, 'runtime': '23.890495 S', 'begin_time': '2026-01-07 18:06:34', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '32.313465 S', 'begin_time': '2026-01-07 18:16:43', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '15.658807 S', 'begin_time': '2026-01-07 18:20:54', 'pass_rate': '0.00'}, {'success': 0, 'all': 1, 'fail': 1, 'skip': 0, 'error': 0, 'runtime': '25.400972 S', 'begin_time': '2026-01-07 18:25:00', 'pass_rate': '0.00'}, {'success': 1, 'all': 1, 'fail': 0, 'skip': 0, 'error': 0, 'runtime': '28.392981 S', 'begin_time': '2026-01-07 18:28:39', 'pass_rate': '100.00'}];
 
     var passRate = [];
     var dTime = [];
